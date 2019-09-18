@@ -8,7 +8,7 @@
 ```html
 <script>
 /*@cc_on 
-document.write('\x3Cscript src="">\x3C/script>');
+document.write('\x3Cscript src="https://cdn.jsdelivr.net/npm/@panhezeng/ie-is-dead@latest/dist/ie-is-dead.min.js">\x3C/script>');
 @*/
 </script>
 ```
@@ -34,7 +34,7 @@ window.ieIsDead.recommendBrowsers = [
     url: "https://www.microsoft.com/zh-cn/windows/microsoft-edge/"
   }
 ];
-document.write('\x3Cscript src="">\x3C/script>');
+document.write('\x3Cscript src="https://cdn.jsdelivr.net/npm/@panhezeng/ie-is-dead@latest/dist/ie-is-dead.min.js">\x3C/script>');
 @*/
 </script>
 ```

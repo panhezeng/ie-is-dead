@@ -9,16 +9,19 @@
 
     var ieIsDead = {};
 
+    if (!window.ieIsDead) {
+      window.ieIsDead = {};
+    }
+
     ieIsDead.delay = 0;
-    if(!isNaN(parseInt(window.ieIsDead.delay))){
-      ieIsDead.delay = window.ieIsDead.delay
+    if (!isNaN(parseInt(window.ieIsDead.delay))) {
+      ieIsDead.delay = window.ieIsDead.delay;
     }
 
     ieIsDead.version = 10;
-    if(!isNaN(parseInt(window.ieIsDead.version))){
-      ieIsDead.version = window.ieIsDead.version
+    if (!isNaN(parseInt(window.ieIsDead.version))) {
+      ieIsDead.version = window.ieIsDead.version;
     }
-
 
     // 国产双核浏览器
     ieIsDead.browserNames = {
@@ -153,7 +156,7 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         {
           slug: "chrome",
           name: "谷歌浏览器",
-          url: "https://www.google.cn/chrome/",
+          url: "https://www.google.cn/chrome/"
         },
         {
           slug: "firefox",
@@ -167,15 +170,19 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         }
       ];
 
-      if(/^\[object [^A]*Array\]$/.test(Object.prototype.toString.call(window.ieIsDead.recommendBrowsers))){
-        recommendBrowsers = window.ieIsDead.recommendBrowsers
+      if (
+        /^\[object [^A]*Array\]$/.test(
+          Object.prototype.toString.call(window.ieIsDead.recommendBrowsers)
+        )
+      ) {
+        recommendBrowsers = window.ieIsDead.recommendBrowsers;
       }
 
       var isXP = navigator.userAgent.indexOf("Windows NT 5") != -1;
       var is7or8 = navigator.userAgent.indexOf("Windows NT 6") != -1;
       var recommendBrowsersHtml = "";
       for (var i = 0; i < recommendBrowsers.length; i++) {
-        var recommendBrowsersConfig = recommendBrowsers[i]
+        var recommendBrowsersConfig = recommendBrowsers[i];
         var slug = recommendBrowsersConfig["slug"];
 
         var classes = "ieisdead-browser ieisdead-browser_" + slug;
@@ -274,7 +281,9 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
               </div>\
               <div class="ieisdead-notice">\
                   <div class="ieisdead-title ieisdead-title_alert">危险！您正在使用的IE' +
-        (ieIsDead.currentIEVersion && ieIsDead.denyall === false ? ieIsDead.currentIEVersion : "") +
+        (ieIsDead.currentIEVersion && ieIsDead.denyall === false
+          ? ieIsDead.currentIEVersion
+          : "") +
         '浏览器已过期，请立即升级！</div>\
             <div class="ieisdead-text">自2016年1月12日起，微软不再为IE11以下版本提供相应支持和更新。没有关键的浏览器安全更新，您的电脑可能易受有害病毒、间谍软件和其他恶意软件的攻击，它们可以窃取或损害您的业务数据和信息。为确保您的电脑安全，请停止使用IE的过期版本！</div>\
             <div class="ieisdead-browser_alert" id="ieIsDead_browserAlert">\
@@ -343,7 +352,7 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
           '吗？</div>\
             <div class="ieisdead-text">您正在使用的可能是' +
           browserName +
-          'IE兼容模式。请切换至浏览器极速模式浏览。</div>';
+          "IE兼容模式。请切换至浏览器极速模式浏览。</div>";
 
         document.getElementById("ieIsDead_browserAlert").style.display = "none";
         document.getElementById(
@@ -378,7 +387,10 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
       }
     }
 
-    if (ieIsDead.currentIEVersion !== false && ieIsDead.currentIEVersion <= ieIsDead.version) {
+    if (
+      ieIsDead.currentIEVersion !== false &&
+      ieIsDead.currentIEVersion <= ieIsDead.version
+    ) {
       ieIsDead.denyall = ieIsDead.version >= 11;
       ieIsDead.show = true;
       if (!!ieIsDead.delay) {
@@ -388,7 +400,6 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         }
       }
       if (ieIsDead.show) {
-
         if (window.addEventListener) {
           window.addEventListener("load", ieIsDead.load, false);
         } else if (window.attachEvent) {
