@@ -23,23 +23,47 @@
       ieIsDead.version = window.ieIsDead.version;
     }
 
+    var recommendBrowsers = [
+      {
+        slug: "chrome",
+        name: "谷歌浏览器",
+        url: "https://www.google.cn/chrome/"
+      },
+      {
+        slug: "firefox",
+        name: "火狐浏览器",
+        url: "https://www.mozilla.org/zh-CN/firefox/"
+      },
+      {
+        slug: "edge",
+        name: "微软浏览器",
+        url: "https://www.microsoft.com/zh-cn/windows/microsoft-edge/"
+      }
+    ];
+
+    if (
+      /^\[object [^A]*Array\]$/.test(
+        Object.prototype.toString.call(window.ieIsDead.recommendBrowsers)
+      )
+    ) {
+      recommendBrowsers = window.ieIsDead.recommendBrowsers;
+    }
+
     // 国产双核浏览器
     ieIsDead.browserNames = {
-      QQBrowser: "QQ浏览器",
-      "360SE": "360安全浏览器",
-      "2345Explorer": "2345加速浏览器",
-      Baidu: "百度浏览器",
-      LBBROWSER: "猎豹安全浏览器",
+      "360SE": "360浏览器",
       Maxthon: "傲游浏览器",
       Sogou: "搜狗浏览器",
-      UC: "UC浏览器"
+      LBBROWSER: "猎豹浏览器",
+      QQBrowser: "QQ浏览器",
+      UC: "UC浏览器",
+      Baidu: "百度浏览器",
     };
 
     // 示意图高度
     ieIsDead.imgHeight = {
       QQBrowser: 172,
       "360SE": 176,
-      "2345Explorer": 243,
       Baidu: 172,
       LBBROWSER: 220,
       Maxthon: 400,
@@ -53,8 +77,6 @@
 
       if (u.indexOf("QQBrowser") > -1) {
         browser = "QQBrowser";
-      } else if (u.indexOf("2345Explorer") > -1) {
-        browser = "2345Explorer";
       } else if (u.indexOf("MetaSr") > -1 || u.indexOf("Sogou") > -1) {
         browser = "Sogou";
       } else if (u.indexOf("Baidu") > -1 || u.indexOf("BIDUBrowser") > -1) {
@@ -79,12 +101,6 @@
           // 根据窗口标题栏、网址栏、收藏栏高度判断
           var navigator_top = window.screenTop - window.screenY;
           switch (navigator_top) {
-            case 71:
-            case 100:
-            case 102:
-            case 126:
-              browser = "2345Explorer";
-              break;
             case 75:
             case 74:
             case 105:
@@ -152,31 +168,7 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
 
       document.getElementsByTagName("head")[0].appendChild(style);
 
-      var recommendBrowsers = [
-        {
-          slug: "chrome",
-          name: "谷歌浏览器",
-          url: "https://www.google.cn/chrome/"
-        },
-        {
-          slug: "firefox",
-          name: "火狐浏览器",
-          url: "https://www.mozilla.org/zh-CN/firefox/"
-        },
-        {
-          slug: "edge",
-          name: "微软浏览器",
-          url: "https://www.microsoft.com/zh-cn/windows/microsoft-edge/"
-        }
-      ];
 
-      if (
-        /^\[object [^A]*Array\]$/.test(
-          Object.prototype.toString.call(window.ieIsDead.recommendBrowsers)
-        )
-      ) {
-        recommendBrowsers = window.ieIsDead.recommendBrowsers;
-      }
 
       var isXP = navigator.userAgent.indexOf("Windows NT 5") != -1;
       var is7or8 = navigator.userAgent.indexOf("Windows NT 6") != -1;
@@ -272,12 +264,12 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         i++;
       }
       currentBrowserHtml +=
-        " 其中一个吗？请从IE兼容模式切换至极速模式浏览。</div>";
+        " 等其他浏览器？请从IE兼容模式切换至极速模式浏览。</div>";
 
       var alertHtml =
         '<div id="ieisdead-box"><div class="ieisdead-wrap"><div class="ieisdead-box"><div class="ieisdead-main">\
               <div class="ieisdead-line">\
-                  <a href="https://support.dmeng.net/kill-old-versions-of-ie.html?utm_source=ieisdead" target="_blank">旧版 Internet Explorer 升级提示弹窗</a>\
+                  <a href="https://support.dmeng.net/kill-old-versions-of-ie.html?utm_source=ieisdead" target="_blank">IE浏览器升级提示</a>\
               </div>\
               <div class="ieisdead-notice">\
                   <div class="ieisdead-title ieisdead-title_alert">危险！您正在使用的IE' +
@@ -287,8 +279,8 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         '浏览器已过期，请立即升级！</div>\
             <div class="ieisdead-text">自2016年1月12日起，微软不再为IE11以下版本提供相应支持和更新。没有关键的浏览器安全更新，您的电脑可能易受有害病毒、间谍软件和其他恶意软件的攻击，它们可以窃取或损害您的业务数据和信息。为确保您的电脑安全，请停止使用IE的过期版本！</div>\
             <div class="ieisdead-browser_alert" id="ieIsDead_browserAlert">\
-                <div class="ieisdead-title ieisdead-title_horn">是时候升级你的浏览器了！</div>\
-                <div class="ieisdead-text">如您坚持使用当前浏览器访问本站，你将看到排版错误、功能不全、无法正常使用的网页，甚至是满屏乱码。请' +
+                <div class="ieisdead-title ieisdead-title_horn">是时候升级您的浏览器了！</div>\
+                <div class="ieisdead-text">如您坚持使用当前浏览器访问本站，您将看到排版错误、功能不全、无法正常使用的网页，甚至是满屏乱码。请' +
         (ieIsDead.denyall
           ? ""
           : "至少升级至 IE" + (ieIsDead.version + 1) + " 或") +
@@ -400,6 +392,7 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         }
       }
       if (ieIsDead.show) {
+        window.ieIsDead = ieIsDead;
         if (window.addEventListener) {
           window.addEventListener("load", ieIsDead.load, false);
         } else if (window.attachEvent) {
