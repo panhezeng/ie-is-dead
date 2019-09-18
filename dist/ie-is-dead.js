@@ -156,7 +156,7 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
     #ieisdead-browsers .ieisdead-browser-dlink{text-decoration:none;background-color:#ffeeba;color:#c4691f;display:inline-block;width:60px;text-align:center}\
     #ieisdead-browsers .ieisdead-browser-dlink:hover{background-color:#dc3545;color:#fff}\
     #ieisdead-browsers .ieisdead-browser-clear{clear:left;width:100%;height:1px;content:""}\
-    #ieisdead-browsers .ieisdead-browser{background-color:#fff;background-repeat:no-repeat;background-position:8px 5px;line-height:44px;padding-left:50px;float:left;margin:18px 18px 0 0}\
+    #ieisdead-browsers .ieisdead-browser{background-color:#fff;background-repeat:no-repeat;background-position:8px 5px;line-height:44px;padding-left:20px;float:left;margin:18px 18px 0 0}\
     #ieisdead-browsers .ieisdead-browser-mr0{margin-right:0}';
 
       var style = document.createElement("style");
@@ -272,15 +272,14 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
                   <a href="https://support.dmeng.net/kill-old-versions-of-ie.html?utm_source=ieisdead" target="_blank">IE浏览器升级提示</a>\
               </div>\
               <div class="ieisdead-notice">\
-                  <div class="ieisdead-title ieisdead-title_alert">危险！您正在使用的IE' +
+                  <div class="ieisdead-title ieisdead-title_alert">警示！您当前使用的IE' +
         (ieIsDead.currentIEVersion && ieIsDead.denyall === false
           ? ieIsDead.currentIEVersion
           : "") +
-        '浏览器已过期，请立即升级！</div>\
-            <div class="ieisdead-text">自2016年1月12日起，微软不再为IE11以下版本提供相应支持和更新。没有关键的浏览器安全更新，您的电脑可能易受有害病毒、间谍软件和其他恶意软件的攻击，它们可以窃取或损害您的业务数据和信息。为确保您的电脑安全，请停止使用IE的过期版本！</div>\
+        '浏览器已被微软废弃，请立即升级！</div>\
+            <div class="ieisdead-text"><a href="https://www.microsoft.com/zh-cn/microsoft-365/windows/end-of-ie-support" target="_blank">自2016年1月12日起，Microsoft将不再为旧版本的Internet Explorer提供安全更新或技术支持。定期安全更新有助于保护设备，因此升级和保持最新状态非常重要。点击阅读完整的微软官方声明文档。</a></div>\
             <div class="ieisdead-browser_alert" id="ieIsDead_browserAlert">\
-                <div class="ieisdead-title ieisdead-title_horn">是时候升级您的浏览器了！</div>\
-                <div class="ieisdead-text">如您坚持使用当前浏览器访问本站，您将看到排版错误、功能不全、无法正常使用的网页，甚至是满屏乱码。请' +
+                <div class="ieisdead-text">使用当前浏览器无法正常浏览本站。请' +
         (ieIsDead.denyall
           ? ""
           : "至少升级至 IE" + (ieIsDead.version + 1) + " 或") +
