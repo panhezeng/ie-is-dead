@@ -264,26 +264,22 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         i++;
       }
       currentBrowserHtml +=
-        " 等其他浏览器？请从IE兼容模式切换至极速模式浏览。</div>";
+        " 等其他浏览器？请从IE兼容模式切换至极速模式浏览本站。</div>";
 
       var alertHtml =
         '<div id="ieisdead-box"><div class="ieisdead-wrap"><div class="ieisdead-box"><div class="ieisdead-main">\
               <div class="ieisdead-line">\
-                  <a href="https://support.dmeng.net/kill-old-versions-of-ie.html?utm_source=ieisdead" target="_blank">IE浏览器升级提示</a>\
+                  <a href="https://support.dmeng.net/kill-old-versions-of-ie.html?utm_source=ieisdead" target="_blank">提示</a>\
               </div>\
               <div class="ieisdead-notice">\
-                  <div class="ieisdead-title ieisdead-title_alert">警示！您当前使用的IE' +
+                  <div class="ieisdead-title ieisdead-title_alert">您当前使用的IE' +
         (ieIsDead.currentIEVersion && ieIsDead.denyall === false
           ? ieIsDead.currentIEVersion
           : "") +
         '浏览器已被微软废弃，请立即升级！</div>\
             <div class="ieisdead-text"><a href="https://www.microsoft.com/zh-cn/microsoft-365/windows/end-of-ie-support" target="_blank">自2016年1月12日起，Microsoft将不再为旧版本的Internet Explorer提供安全更新或技术支持。定期安全更新有助于保护设备，因此升级和保持最新状态非常重要。点击阅读完整的微软官方声明文档。</a></div>\
             <div class="ieisdead-browser_alert" id="ieIsDead_browserAlert">\
-                <div class="ieisdead-text">使用当前浏览器无法正常浏览本站。请' +
-        (ieIsDead.denyall
-          ? ""
-          : "至少升级至 IE" + (ieIsDead.version + 1) + " 或") +
-        '使用其他最新版本的现代浏览器访问。</div>\
+                <div class="ieisdead-text">当前浏览器无法正常浏览本站，请使用其他最新版本的现代浏览器。</div>\
             </div>\
             <div class="ieisdead-browseralert_new" id="ieIsDead_browserAlert_new">' +
         currentBrowserHtml +
