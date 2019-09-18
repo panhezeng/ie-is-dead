@@ -276,7 +276,7 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         (ieIsDead.currentIEVersion && ieIsDead.denyall === false
           ? ieIsDead.currentIEVersion
           : "") +
-        '浏览器已被微软废弃，请立即升级！</div>\
+        '浏览器已被废弃，请立即升级！</div>\
             <div class="ieisdead-text"><a href="https://www.microsoft.com/zh-cn/microsoft-365/windows/end-of-ie-support" target="_blank">自2016年1月12日起，Microsoft将不再为旧版本的Internet Explorer提供安全更新或技术支持。定期安全更新有助于保护设备，因此升级和保持最新状态非常重要。点击阅读完整的微软官方声明文档。</a></div>\
             <div class="ieisdead-browser_alert" id="ieIsDead_browserAlert">\
                 <div class="ieisdead-text">当前浏览器无法正常浏览本站，请使用其他最新版本的现代浏览器。</div>\
