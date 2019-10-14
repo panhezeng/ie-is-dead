@@ -114,19 +114,6 @@
       return browser;
     };
 
-    ieIsDead.close = function() {
-      var el = document.getElementById("ieIsDead_div");
-      el.outerHTML = "";
-      delete el;
-
-      if (!!ieIsDead.delay) {
-        var d = new Date();
-        d = new Date(d.getTime() + 1000 * 60 * ieIsDead.delay);
-        document.cookie =
-          "ieIsDead=delay; expires=" + d.toGMTString() + "; path=/";
-      }
-    };
-
     ieIsDead.load = function() {
       var css =
         '#ieisdead-box{text-align:center;display:block!important}\
@@ -290,15 +277,16 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
         '<div class="ieisdead-browser-clear"></div>\
       </div>\
   </div>\
-  <div class="ieisdead-line">\
-      <a href="javascript:;" onclick="ieIsDead.close()">我已了解风险，并关闭弹窗</a>\
-  </div>\
 </div></div></div></div>';
 
       var alertDiv = document.createElement("div");
       alertDiv.id = "ieIsDead_div";
       alertDiv.innerHTML = alertHtml;
-      document.getElementsByTagName("body")[0].appendChild(alertDiv);
+      var bodyElement = document.getElementsByTagName("body")[0];
+      while (bodyElement.firstChild) {
+        bodyElement.removeChild(bodyElement.firstChild);
+      }
+      bodyElement.appendChild(alertDiv);
 
       // 延迟判断，因为傲游浏览器的属性是异步注入
       setTimeout(function() {
