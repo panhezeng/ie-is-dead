@@ -56,15 +56,13 @@
       Sogou: "搜狗浏览器",
       LBBROWSER: "猎豹浏览器",
       QQBrowser: "QQ浏览器",
-      UC: "UC浏览器",
-      Baidu: "百度浏览器",
+      UC: "UC浏览器"
     };
 
     // 示意图高度
     ieIsDead.imgHeight = {
       QQBrowser: 172,
       "360SE": 176,
-      Baidu: 172,
       LBBROWSER: 220,
       Maxthon: 400,
       Sogou: 119,
@@ -79,8 +77,6 @@
         browser = "QQBrowser";
       } else if (u.indexOf("MetaSr") > -1 || u.indexOf("Sogou") > -1) {
         browser = "Sogou";
-      } else if (u.indexOf("Baidu") > -1 || u.indexOf("BIDUBrowser") > -1) {
-        browser = "Baidu";
       } else if (u.indexOf("UC") > -1 || u.indexOf(" UBrowser") > -1) {
         browser = "UC";
       } else if (
@@ -154,8 +150,6 @@ WHQgq+hRjcL7whKD5Eb/ef8FPxWgioAAAAAASUVORK5CYII=")}\
       else style.innerHTML = css;
 
       document.getElementsByTagName("head")[0].appendChild(style);
-
-
 
       var isXP = navigator.userAgent.indexOf("Windows NT 5") != -1;
       var is7or8 = navigator.userAgent.indexOf("Windows NT 6") != -1;
