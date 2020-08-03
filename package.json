@@ -29,10 +29,10 @@
     "uglify:ie": "uglifyjs dist/ie-is-dead.js -o dist/ie-is-dead.min.js"
   },
   "devDependencies": {
-    "uglify-js": "^3.6.0",
-    "husky": "^3.0.5",
-    "lint-staged": "^9.2.5",
-    "prettier": "^1.18.2"
+    "uglify-js": "^3.10.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
   },
   "husky": {
     "hooks": {
@@ -41,8 +41,7 @@
   },
   "lint-staged": {
     "*.{js,json,css,md,jsx,vue,ts,less,html}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "engines": {
